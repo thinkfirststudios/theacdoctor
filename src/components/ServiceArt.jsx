@@ -102,7 +102,49 @@ export function ArtDuct({ className }) {
   )
 }
 
-// Toolbox + tools  ->  Emergency Repairs
+// Outdoor condenser unit, fan + dual heat/cool  ->  Heat Pump Service
+export function ArtHeatPump({ className }) {
+  const blade = 'M0 -4 C 6 -7 7 -15 0 -18 C -7 -15 -6 -7 0 -4 Z'
+  return (
+    <svg {...svg} className={className} role="presentation">
+      {/* sun (heat) + snowflake (cool) above the unit */}
+      <g transform="translate(48 22)">
+        <circle r="4" />
+        <line x1="0" y1="-7.5" x2="0" y2="-5.5" />
+        <line x1="0" y1="5.5" x2="0" y2="7.5" />
+        <line x1="-7.5" y1="0" x2="-5.5" y2="0" />
+        <line x1="5.5" y1="0" x2="7.5" y2="0" />
+      </g>
+      <g transform="translate(80 22)">
+        <line x1="0" y1="-7.5" x2="0" y2="7.5" />
+        <line x1="-6.5" y1="-3.75" x2="6.5" y2="3.75" />
+        <line x1="-6.5" y1="3.75" x2="6.5" y2="-3.75" />
+      </g>
+      {/* outdoor unit */}
+      <rect x="36" y="38" width="56" height="50" rx="8" />
+      <line x1="44" y1="48" x2="84" y2="48" />
+      {/* fan grille */}
+      <circle cx="64" cy="66" r="15" />
+      <g transform="translate(64 66)">
+        <path d={blade} />
+        <path d={blade} transform="rotate(120)" />
+        <path d={blade} transform="rotate(240)" />
+        <circle r="3" />
+      </g>
+    </svg>
+  )
+}
+
+// Lightning bolt  ->  Emergency Repairs
+export function ArtEmergency({ className }) {
+  return (
+    <svg {...svg} className={className} role="presentation">
+      <path d="M74 16 L44 58 H61 L54 90 L86 46 H67 L74 16 Z" />
+    </svg>
+  )
+}
+
+// Toolbox + tools  ->  Maintenance Services
 export function ArtToolbox({ className }) {
   return (
     <svg {...svg} className={className} role="presentation">

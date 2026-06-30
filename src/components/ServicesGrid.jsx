@@ -1,23 +1,18 @@
 import { ArrowRight } from './Icons'
 import {
   ArtAcRepair,
-  ArtHeating,
   ArtFan,
-  ArtMaintenance,
-  ArtDuct,
+  ArtHeatPump,
+  ArtHeating,
   ArtToolbox,
+  ArtEmergency,
 } from './ServiceArt'
 
 const SERVICES = [
   {
     art: ArtAcRepair,
-    title: 'A/C Repair & Installation',
+    title: 'A/C Repair and Installation',
     copy: 'Repairs, replacements, and new installs. We diagnose the real problem and give you straight options, never upsell.',
-  },
-  {
-    art: ArtHeating,
-    title: 'Heating Services',
-    copy: 'Furnace repair to heat pump installation. We keep your home warm through every cold snap.',
   },
   {
     art: ArtFan,
@@ -25,17 +20,22 @@ const SERVICES = [
     copy: 'Efficient, precise cooling for homes and additions. Expert install and reliable performance.',
   },
   {
-    art: ArtMaintenance,
-    title: 'Maintenance & Tune-Ups',
-    copy: 'Routine care that boosts efficiency, prevents breakdowns, and extends the life of your system.',
+    art: ArtHeatPump,
+    title: 'Heat Pump Service',
+    copy: 'Heating and cooling in one efficient system. Expert install, repair, and service for year-round comfort.',
   },
   {
-    art: ArtDuct,
-    title: 'Duct Cleaning & Repair',
-    copy: 'Better airflow and cleaner air. We seal, repair, and clean your ductwork.',
+    art: ArtHeating,
+    title: 'Heating Services',
+    copy: 'Furnace repair to heat pump installation. We keep your home warm through every cold snap.',
   },
   {
     art: ArtToolbox,
+    title: 'Maintenance Services',
+    copy: 'Routine care that boosts efficiency, prevents breakdowns, and extends the life of your system.',
+  },
+  {
+    art: ArtEmergency,
     title: 'Emergency Repairs',
     copy: 'A/C or heat out at the worst time? We respond fast and get your comfort back.',
   },
