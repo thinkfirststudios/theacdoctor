@@ -1,5 +1,5 @@
-import Placeholder from './Placeholder'
 import { Phone, Check, Star, Snowflake } from './Icons'
+import logo from '../assets/logo.avif'
 
 const TRUST = ['Same-day service', 'Licensed CA #1124257', '5-star rated']
 
@@ -50,11 +50,20 @@ export default function Hero() {
         </div>
 
         <div className="relative animate-fadeup [animation-delay:120ms]">
-          <Placeholder
-            label="Photo: A/C Doctor technician servicing an outdoor HVAC unit"
-            ratio="aspect-[4/3]"
-            className="shadow-card"
-          />
+          {/* brand backdrop for the logo illustration */}
+          <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-white to-brand-offwhite shadow-card ring-1 ring-slate-100">
+            <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+              <div className="h-[78%] w-[78%] rounded-full bg-brand-blue/5" />
+            </div>
+            <img
+              src={logo}
+              alt="The A/C Doctor, Heating and Air Conditioning logo"
+              className="relative z-10 h-full w-full object-contain p-6"
+              loading="eager"
+              width="600"
+              height="450"
+            />
+          </div>
           {/* floating rating badge */}
           <div className="absolute -bottom-5 left-5 flex items-center gap-3 rounded-xl bg-white px-4 py-3 shadow-card ring-1 ring-slate-100">
             <div className="flex flex-col">
