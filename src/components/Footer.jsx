@@ -10,11 +10,11 @@ const NAV = [
 ]
 
 const SERVICES = [
-  'A/C Repair & Installation',
-  'Heating Services',
+  'A/C Repair and Installation',
   'Mini-Split A/C Units',
-  'Maintenance & Tune-Ups',
-  'Duct Cleaning & Repair',
+  'Heat Pump Service',
+  'Heating Services',
+  'Maintenance Services',
   'Emergency Repairs',
 ]
 
