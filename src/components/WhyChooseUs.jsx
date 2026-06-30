@@ -24,11 +24,11 @@ export default function WhyChooseUs() {
             width="1173"
             height="896"
           />
-          <div className="absolute -right-4 bottom-8 max-w-[15rem] rounded-2xl bg-brand-blue p-5 text-white shadow-card">
-            <p className="text-sm font-semibold leading-snug">
+          <div className="absolute -left-3 bottom-3 max-w-[12.5rem] rounded-xl bg-brand-blue/95 p-3.5 text-white shadow-card backdrop-blur-sm sm:-left-4 sm:bottom-4">
+            <p className="text-[13px] font-semibold leading-snug">
               "We send the technician who does the work, not a salesperson"
             </p>
-            <p className="mt-2 text-xs font-bold uppercase tracking-wider text-white/80">
+            <p className="mt-1.5 text-[10px] font-bold uppercase tracking-wider text-white/80">
               Daniel, Owner
             </p>
           </div>
