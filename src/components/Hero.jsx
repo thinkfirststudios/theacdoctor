@@ -1,4 +1,4 @@
-import { Phone, Check, Star, Snowflake } from './Icons'
+import { Phone, Check, Snowflake } from './Icons'
 import logo from '../assets/logo.avif'
 
 const TRUST = ['Same-day service', 'Licensed CA #1124257', '5-star rated']
@@ -53,35 +53,15 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="relative animate-fadeup [animation-delay:120ms]">
-          {/* brand backdrop for the logo illustration */}
-          <div className="group relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-white via-brand-offwhite to-[#eaf2fb] shadow-card ring-1 ring-slate-100">
-            {/* rotating conic glow + soft blobs */}
-            <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-              <div className="h-[88%] w-[88%] animate-spinslow rounded-full bg-[conic-gradient(from_0deg,rgba(11,95,165,0.12),rgba(247,127,0,0.12),rgba(214,40,40,0.10),rgba(11,95,165,0.12))] blur-xl" />
-            </div>
-            <img
-              src={logo}
-              alt="The A/C Doctor, Heating and Air Conditioning logo"
-              className="relative z-10 h-full w-full object-contain p-6 transition-transform duration-500 group-hover:scale-105"
-              loading="eager"
-              width="600"
-              height="450"
-            />
-          </div>
-          {/* floating rating badge */}
-          <div className="absolute -bottom-5 left-5 flex animate-floaty items-center gap-3 rounded-xl bg-white px-4 py-3 shadow-card ring-1 ring-slate-100">
-            <div className="flex flex-col">
-              <div className="flex text-brand-orange">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-4 w-4" />
-                ))}
-              </div>
-              <span className="mt-0.5 text-xs font-semibold text-brand-navy">
-                5-star rated on Google
-              </span>
-            </div>
-          </div>
+        <div className="group relative flex animate-fadeup items-center justify-center [animation-delay:120ms]">
+          <img
+            src={logo}
+            alt="The A/C Doctor, Heating and Air Conditioning logo"
+            className="relative z-10 h-full max-h-[440px] w-full object-contain drop-shadow-2xl transition-transform duration-500 group-hover:scale-105"
+            loading="eager"
+            width="600"
+            height="450"
+          />
         </div>
       </div>
     </section>
