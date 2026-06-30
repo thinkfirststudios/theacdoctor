@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 110px;
+}
+
+body {
+  @apply bg-white text-brand-slate font-sans antialiased;
+}
+
+h1, h2, h3, h4 {
+  @apply font-heading text-brand-navy;
+}
+
+::selection {
+  background-color: #0B5FA5;
+  color: #fff;
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg font-semibold transition-all duration-200 focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-blue/30;
+  }
+  .btn-red {
+    @apply btn bg-brand-red text-white px-6 py-3 shadow-sm hover:bg-[#b51f1f] hover:-translate-y-0.5 active:translate-y-0;
+  }
+  .btn-blue {
+    @apply btn bg-brand-blue text-white px-6 py-3 shadow-sm hover:bg-[#094d85] hover:-translate-y-0.5 active:translate-y-0;
+  }
+  .btn-outline {
+    @apply btn border-2 border-white/80 text-white px-6 py-3 hover:bg-white hover:text-brand-navy;
+  }
+  .btn-outline-blue {
+    @apply btn border-2 border-brand-blue text-brand-blue px-6 py-3 hover:bg-brand-blue hover:text-white;
+  }
+  .section {
+    @apply mx-auto max-w-7xl px-5 sm:px-8;
+  }
+  .eyebrow {
+    @apply inline-block text-sm font-bold uppercase tracking-wider text-brand-red;
+  }
+}
