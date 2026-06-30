@@ -16,7 +16,7 @@ export default function Logo({ dark = false }) {
         <span className={`block font-heading text-lg font-extrabold tracking-tight ${word}`}>
           The A/C Doctor
         </span>
-        <span className="block text-[10px] font-semibold uppercase tracking-[0.18em] text-brand-blue">
+        <span className="block text-[10px] font-semibold uppercase tracking-[0.18em] text-brand-orange">
           Heating &amp; Air Conditioning
         </span>
       </span>
