@@ -17,8 +17,9 @@ const CITIES = [
 
 export default function ServiceArea() {
   return (
-    <section className="bg-brand-navy py-16 text-white md:py-24">
-      <div className="section grid items-center gap-12 lg:grid-cols-2">
+    <section className="relative overflow-hidden bg-brand-navy py-16 text-white md:py-24">
+      <div className="pointer-events-none absolute inset-0 animate-gradient bg-navy-glow [background-size:200%_200%]" />
+      <div className="section relative grid items-center gap-12 lg:grid-cols-2">
         <div>
           <span className="eyebrow text-brand-red">Service Area</span>
           <h2 className="mt-2 text-3xl font-extrabold text-white sm:text-4xl">
@@ -66,7 +67,7 @@ export default function ServiceArea() {
               >
                 <span
                   className={`flex items-center justify-center rounded-full ${
-                    p.big ? 'h-5 w-5 bg-brand-red' : 'h-3.5 w-3.5 bg-brand-blue'
+                    p.big ? 'h-5 w-5 animate-pulsering bg-warm' : 'h-3.5 w-3.5 bg-brand-bluelight'
                   } ring-4 ring-white/20`}
                 >
                   {p.big && <span className="h-1.5 w-1.5 rounded-full bg-white" />}
@@ -79,7 +80,7 @@ export default function ServiceArea() {
               </span>
             ))}
             <div className="absolute bottom-4 left-4 flex items-center gap-2 rounded-lg bg-white/95 px-3 py-2 text-xs font-bold text-brand-navy shadow">
-              <MapPin className="h-4 w-4 text-brand-red" />
+              <MapPin className="h-4 w-4 text-brand-orange" />
               2 counties covered
             </div>
           </div>

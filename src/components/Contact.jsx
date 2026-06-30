@@ -84,7 +84,7 @@ export default function Contact() {
         <div className="lg:col-span-2">
           <span className="eyebrow">Get In Touch</span>
           <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-brand-navy sm:text-4xl">
-            Book Your Free Diagnostic
+            Book Your <span className="gradient-text-warm">Free Diagnostic</span>
           </h2>
           <p className="mt-4 text-lg text-brand-slate">
             Tell us what is going on and Daniel will reach out to get your comfort
@@ -95,7 +95,7 @@ export default function Contact() {
             {DETAILS.map(({ icon: Icon, label, value, sub, href }) => {
               const inner = (
                 <>
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-blue/10 text-brand-blue">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-cool text-white shadow-sm transition-transform group-hover:scale-110">
                     <Icon className="h-5 w-5" />
                   </span>
                   <span>
@@ -111,14 +111,14 @@ export default function Contact() {
                 <a
                   key={label}
                   href={href}
-                  className="flex items-center gap-4 rounded-xl bg-white p-4 shadow-sm ring-1 ring-slate-100 transition-all hover:-translate-y-0.5 hover:shadow-card"
+                  className="group flex items-center gap-4 rounded-xl bg-white p-4 shadow-sm ring-1 ring-slate-100 transition-all hover:-translate-y-0.5 hover:shadow-card"
                 >
                   {inner}
                 </a>
               ) : (
                 <div
                   key={label}
-                  className="flex items-center gap-4 rounded-xl bg-white p-4 shadow-sm ring-1 ring-slate-100"
+                  className="group flex items-center gap-4 rounded-xl bg-white p-4 shadow-sm ring-1 ring-slate-100"
                 >
                   {inner}
                 </div>
@@ -127,7 +127,7 @@ export default function Contact() {
           </div>
 
           <p className="mt-6 flex items-center gap-2 text-sm font-bold text-brand-navy">
-            <span className="flex h-6 w-6 items-center justify-center rounded-full bg-brand-red">
+            <span className="flex h-6 w-6 items-center justify-center rounded-full bg-warm shadow-sm">
               <Check className="h-4 w-4 text-white" />
             </span>
             Free diagnostic on every call
@@ -139,8 +139,8 @@ export default function Contact() {
           <div className="rounded-2xl bg-white p-6 shadow-card ring-1 ring-slate-100 sm:p-8">
             {sent ? (
               <div className="flex flex-col items-center justify-center py-14 text-center">
-                <span className="flex h-16 w-16 items-center justify-center rounded-full bg-brand-red/10">
-                  <Check className="h-8 w-8 text-brand-red" />
+                <span className="flex h-16 w-16 animate-pulsering items-center justify-center rounded-full bg-warm shadow-warm">
+                  <Check className="h-8 w-8 text-white" />
                 </span>
                 <h3 className="mt-5 text-2xl font-extrabold text-brand-navy">
                   Thanks, Daniel will reach out shortly

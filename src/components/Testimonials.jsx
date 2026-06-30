@@ -31,7 +31,7 @@ const REVIEWS = [
 function Card({ name, text }) {
   return (
     <figure className="flex h-full flex-col rounded-2xl border border-slate-100 bg-white p-7 shadow-card">
-      <div className="flex text-brand-red" aria-label="5 out of 5 stars">
+      <div className="flex text-brand-orange" aria-label="5 out of 5 stars">
         {[...Array(5)].map((_, i) => (
           <Star key={i} className="h-5 w-5" />
         ))}
@@ -40,7 +40,7 @@ function Card({ name, text }) {
         "{text}"
       </blockquote>
       <figcaption className="mt-5 flex items-center gap-3 border-t border-slate-100 pt-4">
-        <span className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-blue/10 text-sm font-bold text-brand-blue">
+        <span className="flex h-10 w-10 items-center justify-center rounded-full bg-brandmix text-sm font-bold text-white shadow-sm">
           {name.charAt(0)}
         </span>
         <span>
@@ -62,8 +62,8 @@ export default function Testimonials() {
     <section id="reviews" className="bg-brand-offwhite py-16 md:py-24">
       <div className="section">
         <div className="mx-auto max-w-2xl text-center">
-          <span className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1.5 text-sm font-bold text-brand-navy shadow-sm ring-1 ring-slate-100">
-            <span className="flex text-brand-red">
+          <span className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1.5 text-sm font-bold text-brand-navy shadow-sm ring-1 ring-brand-orange/20">
+            <span className="flex text-brand-orange">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="h-4 w-4" />
               ))}
@@ -71,7 +71,7 @@ export default function Testimonials() {
             Rated 5 stars on Google
           </span>
           <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-brand-navy sm:text-4xl">
-            Words From Real Customers
+            Words From <span className="gradient-text">Real Customers</span>
           </h2>
         </div>
 

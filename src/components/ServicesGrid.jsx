@@ -1,4 +1,5 @@
 import { ArrowRight } from './Icons'
+import Reveal from './Reveal'
 import {
   ArtAcRepair,
   ArtFan,
@@ -45,38 +46,47 @@ export default function ServicesGrid() {
   return (
     <section id="services" className="bg-brand-offwhite py-16 md:py-24">
       <div className="section">
-        <div className="mx-auto max-w-2xl text-center">
+        <Reveal className="mx-auto max-w-2xl text-center">
           <span className="eyebrow">What We Do</span>
           <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-brand-navy sm:text-4xl">
-            The Right Prescription for Your Home's Comfort
+            The Right Prescription for Your{' '}
+            <span className="gradient-text">Home's Comfort</span>
           </h2>
           <p className="mt-4 text-lg text-brand-slate">
             Residential and commercial HVAC, diagnosed and fixed by a pro who
             stands behind the work.
           </p>
-        </div>
+        </Reveal>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {SERVICES.map(({ art: Art, title, copy }) => (
-            <article
+          {SERVICES.map(({ art: Art, title, copy }, i) => (
+            <Reveal
+              as="article"
               key={title}
-              className="group flex flex-col overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-card transition-all duration-200 hover:-translate-y-1 hover:shadow-cardhover"
+              delay={(i % 3) * 110}
+              className="group relative flex flex-col overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:shadow-cardhover"
             >
-              <div className="flex items-center justify-center bg-gradient-to-br from-brand-offwhite to-slate-100 p-8">
-                <Art className="h-28 w-auto text-brand-blue transition-transform duration-300 group-hover:scale-105" />
+              {/* gradient top accent reveals on hover */}
+              <span className="pointer-events-none absolute inset-x-0 top-0 z-10 h-1 scale-x-0 bg-brandmix transition-transform duration-300 group-hover:scale-x-100" />
+              <div className="relative flex items-center justify-center overflow-hidden bg-gradient-to-br from-brand-offwhite to-[#e7eef7] p-8">
+                {/* shimmer sweep on hover */}
+                <span className="pointer-events-none absolute -inset-x-1/3 inset-y-0 -skew-x-12 bg-gradient-to-r from-transparent via-white/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:animate-shimmer group-hover:opacity-100" />
+                <Art className="relative h-28 w-auto text-brand-blue transition-all duration-300 group-hover:scale-110 group-hover:text-brand-orange" />
               </div>
               <div className="flex flex-1 flex-col border-t border-slate-100 p-6">
-                <h3 className="text-lg font-bold text-brand-navy">{title}</h3>
+                <h3 className="text-lg font-bold text-brand-navy transition-colors group-hover:text-brand-blue">
+                  {title}
+                </h3>
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-brand-slate">{copy}</p>
                 <a
                   href="#contact"
-                  className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-brand-red transition-all hover:gap-2.5"
+                  className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-brand-red transition-all hover:gap-2.5 hover:text-brand-orange"
                 >
                   Get a Quote
                   <ArrowRight className="h-4 w-4" />
                 </a>
               </div>
-            </article>
+            </Reveal>
           ))}
         </div>
       </div>

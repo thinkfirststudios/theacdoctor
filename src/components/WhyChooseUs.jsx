@@ -1,4 +1,5 @@
 import { Check } from './Icons'
+import Reveal from './Reveal'
 import whyUsImage from '../assets/whyus_image.avif'
 
 const REASONS = [
@@ -15,11 +16,14 @@ export default function WhyChooseUs() {
   return (
     <section id="why" className="py-16 md:py-24">
       <div className="section grid items-center gap-12 lg:grid-cols-2">
-        <div className="relative order-2 lg:order-1">
+        <Reveal className="relative order-2 lg:order-1">
+          {/* gradient frame accent */}
+          <div className="pointer-events-none absolute -inset-2 -z-10 rounded-3xl bg-brandmix opacity-20 blur-xl" />
+          <div className="absolute -right-4 -top-4 h-24 w-24 animate-floaty rounded-2xl bg-warm opacity-90 shadow-warm" />
           <img
             src={whyUsImage}
             alt="The A/C Doctor technicians servicing a rooftop air conditioning unit"
-            className="aspect-[4/3] w-full rounded-2xl object-cover shadow-card"
+            className="relative aspect-[4/3] w-full rounded-2xl object-cover shadow-card ring-1 ring-white/60"
             loading="lazy"
             width="1173"
             height="896"
@@ -32,32 +36,40 @@ export default function WhyChooseUs() {
               Daniel, Owner
             </p>
           </div>
-        </div>
+        </Reveal>
 
-        <div className="order-1 lg:order-2">
+        <Reveal delay={120} className="order-1 lg:order-2">
           <span className="eyebrow">Why Us</span>
           <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-brand-navy sm:text-4xl">
-            Why San Bernardino Homeowners Call The A/C Doctor
+            Why San Bernardino Homeowners Call{' '}
+            <span className="gradient-text">The A/C Doctor</span>
           </h2>
 
           <ul className="mt-7 space-y-3.5">
-            {REASONS.map((r) => (
-              <li key={r} className="flex items-start gap-3">
-                <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-red/10">
-                  <Check className="h-4 w-4 text-brand-red" />
+            {REASONS.map((r, i) => (
+              <li
+                key={r}
+                className="group flex items-start gap-3 transition-transform duration-200 hover:translate-x-1"
+              >
+                <span
+                  className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-white shadow-sm ${
+                    i % 2 === 0 ? 'bg-warm' : 'bg-cool'
+                  }`}
+                >
+                  <Check className="h-4 w-4" />
                 </span>
                 <span className="text-base font-medium text-brand-navy">{r}</span>
               </li>
             ))}
           </ul>
 
-          <div className="mt-8 rounded-2xl border-l-4 border-brand-red bg-brand-offwhite p-5">
+          <div className="mt-8 rounded-2xl border-l-4 border-brand-orange bg-gradient-to-r from-brand-offwhite to-white p-5">
             <p className="text-base leading-relaxed text-brand-slate">
               Most companies send a salesperson. The A/C Doctor sends Daniel, the
               technician who actually does the work and stands behind it.
             </p>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   )

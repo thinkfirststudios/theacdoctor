@@ -15,6 +15,7 @@ import { Phone } from './components/Icons'
 export default function App() {
   return (
     <div className="min-h-screen bg-white">
+      <div className="accent-bar h-1 w-full" />
       <UtilityBar />
       <Header />
       <main>
@@ -33,7 +34,7 @@ export default function App() {
       {/* Floating click-to-call, mobile only */}
       <a
         href="tel:+18775843223"
-        className="fixed bottom-5 right-5 z-40 flex items-center gap-2 rounded-full bg-brand-red px-5 py-3.5 font-bold text-white shadow-lg shadow-brand-red/30 transition-transform hover:scale-105 active:scale-95 sm:hidden"
+        className="fixed bottom-5 right-5 z-40 flex animate-pulsering items-center gap-2 rounded-full bg-warm px-5 py-3.5 font-bold text-white shadow-warm transition-transform hover:scale-105 active:scale-95 sm:hidden"
         aria-label="Call The A/C Doctor at (877) 584-3223"
       >
         <Phone className="h-5 w-5" />

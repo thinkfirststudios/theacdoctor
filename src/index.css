@@ -16,30 +16,94 @@ h1, h2, h3, h4 {
 }
 
 ::selection {
-  background-color: #0B5FA5;
+  background-color: #F77F00;
   color: #fff;
 }
 
 @layer components {
   .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-lg font-semibold transition-all duration-200 focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-blue/30;
+    @apply relative inline-flex items-center justify-center gap-2 rounded-lg font-semibold transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-orange/30;
   }
+  /* Warm gradient primary (orange -> red) */
   .btn-red {
-    @apply btn bg-brand-red text-white px-6 py-3 shadow-sm hover:bg-[#b51f1f] hover:-translate-y-0.5 active:translate-y-0;
+    @apply btn text-white px-6 py-3 shadow-warm bg-warm;
+    background-size: 160% 160%;
+    background-position: 0% 50%;
   }
+  .btn-red:hover {
+    @apply -translate-y-0.5;
+    background-position: 100% 50%;
+  }
+  .btn-red:active {
+    @apply translate-y-0;
+  }
+  /* Cool gradient */
   .btn-blue {
-    @apply btn bg-brand-blue text-white px-6 py-3 shadow-sm hover:bg-[#094d85] hover:-translate-y-0.5 active:translate-y-0;
+    @apply btn text-white px-6 py-3 shadow-cool bg-cool;
+    background-size: 160% 160%;
+    background-position: 0% 50%;
+  }
+  .btn-blue:hover {
+    @apply -translate-y-0.5;
+    background-position: 100% 50%;
   }
   .btn-outline {
     @apply btn border-2 border-white/80 text-white px-6 py-3 hover:bg-white hover:text-brand-navy;
   }
   .btn-outline-blue {
-    @apply btn border-2 border-brand-blue text-brand-blue px-6 py-3 hover:bg-brand-blue hover:text-white;
+    @apply btn border-2 border-brand-blue text-brand-blue px-6 py-3 hover:bg-brand-blue hover:text-white hover:shadow-cool;
   }
   .section {
     @apply mx-auto max-w-7xl px-5 sm:px-8;
   }
   .eyebrow {
-    @apply inline-block text-sm font-bold uppercase tracking-wider text-brand-red;
+    @apply inline-block text-sm font-bold uppercase tracking-wider text-brand-orange;
+  }
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(120deg, #0B5FA5 0%, #2E8BD8 45%, #F77F00 100%);
+  }
+  .gradient-text-warm {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(120deg, #F77F00 0%, #D62828 100%);
+  }
+}
+
+@layer utilities {
+  /* scroll reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(26px);
+    transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+  .reveal.in-view {
+    opacity: 1;
+    transform: none;
+  }
+  /* animated underline for section eyebrows */
+  .accent-bar {
+    background-image: linear-gradient(90deg, #0B5FA5, #F77F00);
+    background-size: 200% 100%;
+    animation: gradientshift 6s ease infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .animate-floaty,
+  .animate-gradient,
+  .animate-shimmer,
+  .animate-pulsering,
+  .animate-spinslow,
+  .animate-fadeup {
+    animation: none !important;
   }
 }
