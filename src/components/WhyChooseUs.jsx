@@ -1,5 +1,5 @@
-import Placeholder from './Placeholder'
 import { Check } from './Icons'
+import whyUsImage from '../assets/whyus_image.avif'
 
 const REASONS = [
   'Free diagnostic and free estimates on every visit',
@@ -16,10 +16,13 @@ export default function WhyChooseUs() {
     <section id="why" className="py-16 md:py-24">
       <div className="section grid items-center gap-12 lg:grid-cols-2">
         <div className="relative order-2 lg:order-1">
-          <Placeholder
-            label="Photo: Daniel, owner and lead technician of The A/C Doctor"
-            ratio="aspect-[4/5]"
-            className="shadow-card"
+          <img
+            src={whyUsImage}
+            alt="The A/C Doctor technicians servicing a rooftop air conditioning unit"
+            className="aspect-[4/3] w-full rounded-2xl object-cover shadow-card"
+            loading="lazy"
+            width="1173"
+            height="896"
           />
           <div className="absolute -right-4 bottom-8 max-w-[15rem] rounded-2xl bg-brand-blue p-5 text-white shadow-card">
             <p className="text-sm font-semibold leading-snug">
