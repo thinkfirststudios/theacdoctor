@@ -12,10 +12,7 @@ export default function FinancingBand() {
   return (
     <section className="py-16 md:py-24">
       <div className="section">
-        <Reveal className="relative grid items-center gap-10 overflow-hidden rounded-3xl bg-brandmix px-7 py-12 text-white shadow-cool [background-size:180%_180%] motion-safe:animate-gradient sm:px-12 md:grid-cols-2 md:py-14">
-          {/* floating accents */}
-          <div className="pointer-events-none absolute -right-12 -top-12 h-52 w-52 animate-floaty rounded-full bg-white/10 blur-2xl" />
-          <div className="pointer-events-none absolute -bottom-16 left-1/3 h-44 w-44 animate-floaty rounded-full bg-brand-orange/30 blur-2xl [animation-delay:1.4s]" />
+        <Reveal className="relative grid items-center gap-10 overflow-hidden rounded-3xl bg-brandmix px-7 py-12 text-white shadow-cool sm:px-12 md:grid-cols-2 md:py-14">
           <div className="relative">
             <span className="eyebrow text-white/85">Flexible Payment</span>
             <h2 className="mt-2 text-3xl font-extrabold text-white sm:text-4xl">
