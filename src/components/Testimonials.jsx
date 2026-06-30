@@ -30,7 +30,7 @@ const REVIEWS = [
 
 function Card({ name, text }) {
   return (
-    <figure className="flex h-full flex-col rounded-2xl border border-slate-100 bg-white p-7 shadow-card">
+    <figure className="flex h-full flex-col rounded-2xl bg-white p-7 shadow-2xl ring-1 ring-black/5 transition-transform duration-300 hover:-translate-y-1">
       <div className="flex text-brand-orange" aria-label="5 out of 5 stars">
         {[...Array(5)].map((_, i) => (
           <Star key={i} className="h-5 w-5" />
@@ -59,10 +59,15 @@ export default function Testimonials() {
   const go = (dir) => setPage((p) => (p + dir + pages) % pages)
 
   return (
-    <section id="reviews" className="bg-brand-offwhite py-16 md:py-24">
-      <div className="section">
+    <section
+      id="reviews"
+      className="relative overflow-hidden bg-brand-navy py-16 text-white md:py-24"
+    >
+      {/* animated brand glow to lift the cards */}
+      <div className="pointer-events-none absolute inset-0 animate-gradient bg-navy-glow [background-size:200%_200%]" />
+      <div className="section relative">
         <div className="mx-auto max-w-2xl text-center">
-          <span className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1.5 text-sm font-bold text-brand-navy shadow-sm ring-1 ring-brand-orange/20">
+          <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-sm font-bold text-white shadow-sm ring-1 ring-white/20 backdrop-blur">
             <span className="flex text-brand-orange">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="h-4 w-4" />
@@ -70,8 +75,8 @@ export default function Testimonials() {
             </span>
             Rated 5 stars on Google
           </span>
-          <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-brand-navy sm:text-4xl">
-            Words From <span className="gradient-text">Real Customers</span>
+          <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+            Words From <span className="gradient-text-warm">Real Customers</span>
           </h2>
         </div>
 
@@ -98,7 +103,7 @@ export default function Testimonials() {
             <button
               type="button"
               onClick={() => go(-1)}
-              className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-slate-200 text-brand-navy transition-colors hover:border-brand-blue hover:bg-brand-blue hover:text-white focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-blue/30"
+              className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-white/25 text-white transition-colors hover:border-brand-orange hover:bg-brand-orange hover:text-white focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-orange/40"
               aria-label="Previous reviews"
             >
               <ArrowRight className="h-5 w-5 rotate-180" />
@@ -111,7 +116,7 @@ export default function Testimonials() {
                   type="button"
                   onClick={() => setPage(i)}
                   className={`h-2.5 rounded-full transition-all ${
-                    i === page ? 'w-7 bg-brand-red' : 'w-2.5 bg-slate-300 hover:bg-slate-400'
+                    i === page ? 'w-7 bg-brand-orange' : 'w-2.5 bg-white/30 hover:bg-white/50'
                   }`}
                   aria-label={`Go to reviews page ${i + 1}`}
                   aria-current={i === page}
@@ -122,7 +127,7 @@ export default function Testimonials() {
             <button
               type="button"
               onClick={() => go(1)}
-              className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-slate-200 text-brand-navy transition-colors hover:border-brand-blue hover:bg-brand-blue hover:text-white focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-blue/30"
+              className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-white/25 text-white transition-colors hover:border-brand-orange hover:bg-brand-orange hover:text-white focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-orange/40"
               aria-label="Next reviews"
             >
               <ArrowRight className="h-5 w-5" />
