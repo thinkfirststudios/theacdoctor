@@ -84,7 +84,7 @@ export default function Contact() {
         <div className="lg:col-span-2">
           <span className="eyebrow">Get In Touch</span>
           <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-brand-navy sm:text-4xl">
-            Book Your <span className="gradient-text-warm">Free Diagnostic</span>
+            Book Your <span className="text-brand-orange">Free Diagnostic</span>
           </h2>
           <p className="mt-4 text-lg text-brand-slate">
             Tell us what is going on and Daniel will reach out to get your comfort
