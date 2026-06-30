@@ -77,13 +77,6 @@ export default function Hero() {
               </span>
             </div>
           </div>
-          {/* floating license badge */}
-          <div className="absolute -right-3 top-5 hidden rounded-xl bg-brand-navy px-4 py-3 text-white shadow-card sm:block">
-            <span className="block text-[10px] font-semibold uppercase tracking-wider text-brand-blue">
-              Licensed &amp; Insured
-            </span>
-            <span className="text-sm font-bold">CA #1124257</span>
-          </div>
         </div>
       </div>
     </section>
