@@ -44,15 +44,18 @@ const SERVICES = [
 
 export default function ServicesGrid() {
   return (
-    <section id="services" className="bg-brand-offwhite py-16 md:py-24">
+    <section
+      id="services"
+      className="bg-gradient-to-br from-brand-bluelight via-brand-blue to-[#0a4f88] py-16 md:py-24"
+    >
       <div className="section">
         <Reveal className="mx-auto max-w-2xl text-center">
-          <span className="eyebrow">What We Do</span>
-          <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-brand-navy sm:text-4xl">
+          <span className="eyebrow text-brand-orangelight">What We Do</span>
+          <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
             The Right Prescription for Your{' '}
-            <span className="gradient-text">Home's Comfort</span>
+            <span className="text-brand-orange">Home's Comfort</span>
           </h2>
-          <p className="mt-4 text-lg text-brand-slate">
+          <p className="mt-4 text-lg text-white/85">
             Residential and commercial HVAC, diagnosed and fixed by a pro who
             stands behind the work.
           </p>
