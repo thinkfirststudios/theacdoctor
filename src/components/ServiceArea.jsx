@@ -34,7 +34,7 @@ export default function ServiceArea() {
           <ul className="mt-7 grid grid-cols-2 gap-x-6 gap-y-3 sm:grid-cols-3">
             {CITIES.map((c) => (
               <li key={c} className="flex items-center gap-2 text-sm font-medium text-white/85">
-                <MapPin className="h-4 w-4 shrink-0 text-brand-blue" />
+                <MapPin className="h-4 w-4 shrink-0 text-brand-orange" />
                 {c}
               </li>
             ))}
